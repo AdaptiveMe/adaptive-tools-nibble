@@ -1,10 +1,8 @@
 # Adaptive Nibble Standalone (Device Simulator) 
-[![Build Status](https://travis-ci.org/AdaptiveMe/npm-adaptiveme-nibble.svg?branch=master)](https://travis-ci.org/AdaptiveMe/npm-adaptiveme-nibble)
-[![GitHub tag](https://img.shields.io/github/tag/AdaptiveMe/npm-adaptiveme-nibble.svg)](https://github.com/AdaptiveMe/npm-adaptiveme-nibble) 
-[![Adaptive Nibble NodeJS](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/npm-adaptiveme-nibble) 
-[![Adaptive Nibble NodeJS](https://img.shields.io/node/v/gh-badges.svg)](https://www.npmjs.com/package/npm-adaptiveme-nibble)
+[![Build Status](https://travis-ci.org/AdaptiveMe/adaptive-tools-nibble.svg?branch=master)](https://travis-ci.org/AdaptiveMe/adaptive-tools-nibble)
+[![GitHub tag](https://img.shields.io/github/tag/AdaptiveMe/adaptive-tools-nibble.svg)](https://github.com/AdaptiveMe/adaptive-tools-nibble/releases) 
 [![License](https://img.shields.io/badge/license-apache%202-blue.svg)](https://raw.githubusercontent.com/AdaptiveMe/adaptive-arp-api/master/LICENSE) 
-[![Adaptive Nibble](https://img.shields.io/badge/devtools-nibble-yellow.svg)](https://github.com/AdaptiveMe/npm-adaptiveme-nibble)  [![adaptive.me](https://img.shields.io/badge/adaptive-me-fdcb0e.svg)](http://adaptive.me)
+[![Adaptive Nibble](https://img.shields.io/badge/devtools-nibble-yellow.svg)](https://github.com/AdaptiveMe/adaptive-tools-nibble)  [![adaptive.me](https://img.shields.io/badge/adaptive-me-fdcb0e.svg)](http://adaptive.me)
 [![Adaptive Development Tools](https://raw.githubusercontent.com/AdaptiveMe/AdaptiveMe.github.io/master/assets/logos/normal/Logo-adaptive-devtools.png)](#)
 
 ## Introduction
@@ -13,7 +11,7 @@
 
 [![Adaptive Nibble Screenshot](https://raw.githubusercontent.com/AdaptiveMe/AdaptiveMe.github.io/master/assets/screenshots/nibble-screenshot.png)](https://raw.githubusercontent.com/AdaptiveMe/AdaptiveMe.github.io/master/assets/screenshots/nibble-screenshot.png)
 
-Adaptive Nibble is a mobile device simulator for hybrid-app development. It allows you to use the emulator during the development to preview your app as you develop it and it also emulates calls to the Adaptive Runtime Platform APIs. This is the **stand-alone** Adaptive Nibble installer for NodeJS. 
+Adaptive Nibble is a mobile device simulator for hybrid-app development. It allows you to use the emulator during the development to preview your app as you develop it and it also emulates calls to the Adaptive Runtime Platform APIs. This is the **stand-alone** Adaptive Nibble release. 
 
 If you want the **integrated** version for Adaptive Generator for Yeoman, please refer to the following repo: [AdaptiveMe App Generator for Yeoman](https://github.com/AdaptiveMe/generator-adaptiveme) for installation instructions.
 
@@ -21,50 +19,37 @@ If you want the **integrated** version for Adaptive Generator for Yeoman, please
 
 ### Installation
 
-* You should NodeJS installed on your machine before proceeding with the installation. If you don't have it, please download it from [here](https://nodejs.org/download/) for your platform. 
-	*	If you don't know whether you have it installed, open up a ```terminal```or ```cmd prompt``` and issue the following command ```node -v```.
-	* The above command should respond with at least the following NodeJS version ```v0.12.0```.
-* Install the ```npm-adaptiveme-nibble``` on your machine.
-	* On **Windows** from ```cmd prompt```:
-	
-	
-	```
-  		npm i npm-adaptiveme-nibble -g
-   	```
-	* On **OS X** and **Linux** from ```terminal```:
-	
+This version of AdaptiveMe Nibble comes with a bundled Java runtime.
 
-	``` 
-  		sudo npm i npm-adaptiveme-nibble -g
-	```
-*	The installer will download everything you need to run Adaptive Nibble.
+1. Download the package for your platform from [here](https://github.com/AdaptiveMe/adaptive-tools-nibble/releases).
+2. Unzip/Untar-gz to a location of your liking.
+3. In the directory where you unzipped/untarred-gz the installation, you'll find the launch script:
+	* Execute from terminal/shell ```adaptive-nibble-emulator``` on OS X/Linux.
+	* Execute from command line prompt ```adaptive-nibble-emulator.bat``` on Windows platforms.
+4. Executing the above command on your box should yield the help message with the parameters you can issue.
 
 ### Running
 
-* Run from a ```terminal``` or ```cmd prompt```:
+* **OS X / Linux**, from a ```terminal``` in the bin directory of your installation:
 
-	*	```nibble -h``` to launch nibble help message for parameters.
-	*	```nibble -p http://www.google.com``` to launch nibble with the given URL.
-	*	```nibble -p <some_local_path>/index.html -w``` to launch nibble with the given file and watch for changes.
-* You're ready to start developing! Enjoy.
+	*	```./adaptive-nibble-emulator -h``` to launch nibble help message for parameters.
+	*	```./adaptive-nibble-emulator -p http://www.google.com``` to launch nibble with the given URL.
+	*	```./adaptive-nibble-emulator -p <some_local_path>/index.html -w true``` to launch nibble with the given file and watch for changes.
+	* When using the ```-w true``` parameter, any edits to your html file (and related files) will automatically refresh the emulator.
+* **Windows**, from a ```cmd prompt``` in the bin directory of your installation:
+	*	```adaptive-nibble-emulator.bat -h``` to launch nibble help message for parameters.
+	*	```adaptive-nibble-emulator.bat -p http://www.google.com``` to launch nibble with the given URL.
+	*	```adaptive-nibble-emulator.bat -p <some_local_path>/index.html -w true``` to launch nibble with the given file and watch for changes.
+	* When using the ```-w true``` parameter, any edits to your html file (and related files) will automatically refresh the emulator.
 
-* Please report issues/wants/needs [here](https://github.com/AdaptiveMe/npm-adaptiveme-nibble/issues) clearly stating your platform and screenshots (whenever possible).
+* **Tips**
+	* Add ```<your_nibble_installation_dir>/bin``` to your $PATH / %PATH% so you can invoke nibble from anywhere!
+		* ```set PATH=C:\mynibbledir\bin;%PATH%``` on Windows.
+		* ```export PATH=/Users/<myuser>/<mynibbledir>/bin:$PATH```on OS X/Linux. The ```.bashrc```file (or your shell's equivalent) is a perfect location to do this.
+	* Add AdaptiveMe Nibble to your IDE and launch it from your IDE with your project path.
 
-### Updating
-* Updating your ```npm-adaptiveme-nibble``` installation.
-	* On **Windows** from ```cmd prompt```:
-		
+* Please report issues/wants/needs [here](https://github.com/AdaptiveMe/adaptive-tools-nibble/issues) clearly stating your platform and screenshots (whenever possible).
 
-	```
-  		npm up npm-adaptiveme-nibble -g 
-   	```
-   	
-	* On **OS X** and **Linux** from ```terminal```:
-	
-
-	``` 
-  		sudo npm up npm-adaptiveme-nibble -g
-	```
 
 ## About Adaptive Runtime Platform
 
@@ -76,9 +61,9 @@ Please refer to the [project site](http://adaptiveme.github.io) for more informa
 
 ## Work Backlog
 
-#### Board: [![Stories in Ready](https://badge.waffle.io/AdaptiveMe/npm-adaptiveme-nibble.svg?label=ready&title=Ready)](https://waffle.io/AdaptiveMe/npm-adaptiveme-nibble)
+#### Board: [![Stories in Ready](https://badge.waffle.io/AdaptiveMe/adaptive-tools-nibble.svg?label=ready&title=Ready)](https://waffle.io/AdaptiveMe/adaptive-tools-nibble)
 
-[![Throughput Graph](https://graphs.waffle.io/AdaptiveMe/npm-adaptiveme-nibble/throughput.svg)](https://waffle.io/AdaptiveMe/npm-adaptiveme-nibble/metrics)
+[![Throughput Graph](https://graphs.waffle.io/AdaptiveMe/adaptive-tools-nibble/throughput.svg)](https://waffle.io/AdaptiveMe/adaptive-tools-nibble/metrics)
 
 ## Contributing
 
